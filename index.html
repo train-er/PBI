@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBI Level 1 (Foundation) — Performance Body Instructor</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;600&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5F0E8;
+    --warm-white: #FAF7F2;
+    --gold: #A8894A;
+    --gold-light: #C4A96A;
+    --gold-pale: #EDE0C4;
+    --brown: #5C4A2A;
+    --brown-light: #8C7050;
+    --green-sage: #4A6355;
+    --green-light: #7A9E8C;
+    --charcoal: #2A2520;
+    --text: #3A3028;
+    --text-light: #6A5E50;
+    --border: #D8CCBA;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--warm-white);
+    color: var(--text);
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 80px 40px 100px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 60%, rgba(168,137,74,0.25) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(74,99,85,0.2) 0%, transparent 50%);
+  }
+  .hero-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(38px, 6vw, 64px);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+    position: relative;
+    margin-bottom: 8px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .hero-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(13px, 2vw, 16px);
+    color: rgba(245,240,232,0.7);
+    margin-top: 20px;
+    letter-spacing: 0.15em;
+    position: relative;
+  }
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-style: italic;
+    color: var(--gold-pale);
+    margin-top: 32px;
+    position: relative;
+  }
+  .hero-divider {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+    margin: 36px auto;
+    position: relative;
+  }
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    position: relative;
+    flex-wrap: wrap;
+  }
+  .hero-stat {
+    text-align: center;
+  }
+  .hero-stat .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .hero-stat .label {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: rgba(245,240,232,0.6);
+    margin-top: 6px;
+  }
+
+  /* ── SECTION BASE ── */
+  section {
+    padding: 80px 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+
+  h2.section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(22px, 4vw, 32px);
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.4;
+    margin-bottom: 32px;
+  }
+
+  h2.section-title span {
+    color: var(--gold);
+  }
+
+  .divider {
+    width: 40px;
+    height: 2px;
+    background: var(--gold);
+    margin: 0 0 40px 0;
+  }
+
+  /* ── VISION BLOCK ── */
+  .vision-block {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 80px 40px;
+  }
+  .vision-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .vision-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-style: italic;
+    line-height: 1.5;
+    color: var(--gold-pale);
+    border-left: 2px solid var(--gold);
+    padding-left: 32px;
+  }
+  .vision-points {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .vision-point {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .vision-point-icon {
+    width: 32px;
+    height: 32px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    color: var(--gold-light);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .vision-point p {
+    font-family: 'Noto Sans JP', serif;
+    font-size: 13.5px;
+    color: rgba(245,240,232,0.8);
+    line-height: 1.8;
+  }
+
+  /* ── FEATURE CARDS ── */
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+  .feature-card {
+    background: var(--warm-white);
+    padding: 36px 28px;
+    transition: background 0.3s;
+  }
+  .feature-card:hover {
+    background: var(--cream);
+  }
+  .feature-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .feature-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .feature-card p {
+    font-size: 12.5px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  /* ── CURRICULUM ── */
+  .curriculum-wrap {
+    background: var(--cream);
+    padding: 80px 40px;
+  }
+  .curriculum-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .curriculum-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    border: 1px solid var(--border);
+  }
+  .curr-block {
+    padding: 32px 24px;
+    border-right: 1px solid var(--border);
+    position: relative;
+  }
+  .curr-block:last-child { border-right: none; }
+  .curr-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .curr-hours {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .curr-block h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 14px;
+    line-height: 1.5;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .curr-block ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .curr-block ul li {
+    font-size: 12px;
+    color: var(--text-light);
+    padding-left: 14px;
+    position: relative;
+  }
+  .curr-block ul li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--gold-light);
+    font-size: 10px;
+  }
+  .curr-total {
+    margin-top: 24px;
+    padding: 20px 24px;
+    background: var(--charcoal);
+    color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .curr-total span {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .curr-total strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--gold-pale);
+  }
+
+  /* ── PRACTICAL CONTENT ── */
+  .practical-parts {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .part-row {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    border: 1px solid var(--border);
+    border-bottom: none;
+    overflow: hidden;
+  }
+  .part-row:last-child { border-bottom: 1px solid var(--border); }
+  .part-header {
+    background: var(--charcoal);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .part-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+  }
+  .part-name {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--cream);
+    line-height: 1.6;
+    margin-top: 8px;
+  }
+  .part-goal {
+    font-size: 11px;
+    color: rgba(245,240,232,0.55);
+    margin-top: 12px;
+    line-height: 1.7;
+  }
+  .part-body {
+    padding: 28px 32px;
+    background: var(--warm-white);
+  }
+  .part-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .part-section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--green-sage);
+    letter-spacing: 0.15em;
+    margin-bottom: 10px;
+  }
+  .exercises {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .ex-tag {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    color: var(--brown);
+    font-size: 12px;
+    padding: 5px 14px;
+    font-family: 'Noto Sans JP', sans-serif;
+    letter-spacing: 0.03em;
+  }
+  .ex-tag.seitai {
+    background: rgba(168,137,74,0.08);
+    border-color: rgba(168,137,74,0.3);
+    color: var(--brown-light);
+    font-size: 11px;
+    font-style: italic;
+  }
+  .part-note {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--green-sage);
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    line-height: 1.7;
+  }
+
+  /* ── GOALS ── */
+  .goals-section {
+    background: var(--green-sage);
+    padding: 80px 40px;
+  }
+  .goals-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .goals-inner .section-label { color: rgba(255,255,255,0.6); }
+  .goals-inner h2.section-title { color: var(--cream); }
+  .goals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: rgba(255,255,255,0.2);
+    margin-top: 40px;
+  }
+  .goal-card {
+    background: rgba(255,255,255,0.08);
+    padding: 36px 28px;
+    backdrop-filter: blur(4px);
+  }
+  .goal-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--gold-pale);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .goal-card p {
+    font-size: 12.5px;
+    color: rgba(245,240,232,0.75);
+    line-height: 1.9;
+  }
+
+  /* ── CERTIFICATION ── */
+  .cert-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+    margin-top: 40px;
+  }
+  .cert-box {
+    background: var(--warm-white);
+    padding: 40px 36px;
+  }
+  .cert-box h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .cert-box ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .cert-box ul li {
+    font-size: 13.5px;
+    color: var(--text);
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.7;
+  }
+  .cert-box ul li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--gold);
+    font-size: 8px;
+    top: 5px;
+  }
+
+  /* ── CAREER PATHS ── */
+  .career-wrap {
+    background: var(--cream);
+    padding: 80px 40px;
+  }
+  .career-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .career-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+  }
+  .career-card {
+    border: 1px solid var(--border);
+    padding: 32px;
+    background: var(--warm-white);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .career-card:hover {
+    border-color: var(--gold);
+    transform: translateY(-2px);
+  }
+  .career-icon {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .career-card h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 10px;
+  }
+  .career-card p {
+    font-size: 12.5px;
+    color: var(--text-light);
+    line-height: 1.9;
+  }
+
+  /* ── CTA ── */
+  .cta-block {
+    background: var(--charcoal);
+    padding: 100px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, rgba(168,137,74,0.15) 0%, transparent 70%);
+  }
+  .cta-eyebrow {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .cta-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 48px);
+    font-weight: 300;
+    color: var(--cream);
+    line-height: 1.4;
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+  .cta-block h2 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+  .cta-sub {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    color: rgba(245,240,232,0.6);
+    margin-bottom: 48px;
+    position: relative;
+    letter-spacing: 0.1em;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--charcoal);
+    padding: 16px 40px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--gold-light); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--cream);
+    padding: 16px 40px;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    letter-spacing: 0.15em;
+    border: 1px solid rgba(245,240,232,0.4);
+    cursor: pointer;
+    transition: border-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--gold-light); color: var(--gold-light); }
+
+  /* ── FLOW ── */
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 48px;
+    position: relative;
+  }
+  .flow-step {
+    padding: 32px 24px;
+    border-left: 1px solid var(--border);
+    position: relative;
+  }
+  .flow-step:first-child { border-left: none; }
+  .flow-step-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 300;
+    color: var(--gold-pale);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .flow-step h3 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brown);
+    margin-bottom: 8px;
+  }
+  .flow-step p {
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.8;
+  }
+
+  /* responsive */
+  @media (max-width: 768px) {
+    section, .vision-block, .curriculum-wrap, .goals-section, .career-wrap, .cta-block { padding: 60px 20px; }
+    .hero { padding: 60px 24px 80px; }
+    .vision-inner { grid-template-columns: 1fr; gap: 40px; }
+    .curriculum-grid { grid-template-columns: 1fr 1fr; }
+    .part-row { grid-template-columns: 1fr; }
+    .goals-grid { grid-template-columns: 1fr; }
+    .cert-row { grid-template-columns: 1fr; }
+    .career-grid { grid-template-columns: 1fr; }
+    .flow-steps { grid-template-columns: 1fr 1fr; }
+    .hero-stats { gap: 32px; }
+  }
+
+  /* animation */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero > * { animation: fadeUp 0.9s ease both; }
+  .hero .hero-eyebrow { animation-delay: 0.1s; }
+  .hero h1 { animation-delay: 0.25s; }
+  .hero .hero-sub { animation-delay: 0.4s; }
+  .hero .hero-tagline { animation-delay: 0.5s; }
+  .hero .hero-divider { animation-delay: 0.6s; }
+  .hero .hero-stats { animation-delay: 0.75s; }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <p class="hero-eyebrow">Performance Body Instructor — Level 1</p>
+  <h1>体の基本を知り、<br><em>機能的な身体の土台を作る</em></h1>
+  <p class="hero-sub">Foundation — パフォーマーのための機能的ボディワーク認定講座</p>
+  <p class="hero-tagline">"整える" と "動く" を、一つの身体に。</p>
+  <div class="hero-divider"></div>
+  <div style="position:relative; display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+    <a href="#flow" class="btn-primary" style="background:var(--gold); color:var(--charcoal); padding:14px 36px; font-family:'Noto Sans JP',sans-serif; font-size:13px; font-weight:500; letter-spacing:0.15em; text-decoration:none; display:inline-block;">説明会に申し込む</a>
+    <a href="#features" class="btn-secondary" style="background:transparent; color:var(--cream); padding:14px 36px; font-size:13px; font-weight:300; letter-spacing:0.15em; border:1px solid rgba(245,240,232,0.4); text-decoration:none; display:inline-block;">詳細を見る</a>
+  </div>
+</div>
+
+<!-- ── VISION ── -->
+<div class="vision-block">
+  <div style="max-width:1000px; margin:0 auto; padding:0;">
+    <div class="vision-quote" style="text-align:center; border-left:none; padding-left:0; margin-bottom:64px;">
+      "しっかりとした身体の土台がなければ、<br>良いパフォーマンスは実現しない。"
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:40px;">
+      <div style="border-top:1px solid rgba(168,137,74,0.4); padding-top:24px;">
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--gold-pale); margin-bottom:10px; line-height:1.6;">パフォーマーの身体を根本から変える</h3>
+        <p style="font-size:13px; color:rgba(245,240,232,0.7); line-height:1.9;">一時的なケアではなく「土台づくり」を軸にした長期的なサポートができる指導者になります。</p>
+      </div>
+      <div style="border-top:1px solid rgba(168,137,74,0.4); padding-top:24px;">
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--gold-pale); margin-bottom:10px; line-height:1.6;">60分レッスンがすぐに開催できる</h3>
+        <p style="font-size:13px; color:rgba(245,240,232,0.7); line-height:1.9;">整体ケア＋運動指導を組み合わせた60分完結のオリジナルレッスンを、パフォーマー向けにも一般向けにも展開できます。</p>
+      </div>
+      <div style="border-top:1px solid rgba(168,137,74,0.4); padding-top:24px;">
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--gold-pale); margin-bottom:10px; line-height:1.6;">活動の柱を増やせる</h3>
+        <p style="font-size:13px; color:rgba(245,240,232,0.7); line-height:1.9;">フィットネスクラブ・パーソナル・オンラインなど、ダンス・スポーツ指導の枠を超えた仕事の広がりが生まれます。</p>
+      </div>
+      <div style="border-top:1px solid rgba(168,137,74,0.4); padding-top:24px;">
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:15px; font-weight:600; color:var(--gold-pale); margin-bottom:10px; line-height:1.6;">他の指導者と差別化できる</h3>
+        <p style="font-size:13px; color:rgba(245,240,232,0.7); line-height:1.9;">「身体のケアを取り入れたレッスン」という新しい価値は、今の指導現場にはまだ少ない、あなただけの武器になります。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PBI の特徴 ── -->
+<section>
+  <p class="section-label">What is PBI</p>
+  <h2 class="section-title">PBI Level 1 の<span>4つの特徴</span></h2>
+  <div class="divider"></div>
+  <div class="features-grid" id="features">
+    <div class="feature-card">
+      <div class="feature-num">01</div>
+      <h3>ジャンル横断的</h3>
+      <p>ダンス・一輪車・舞台演技など、あらゆるパフォーマーに適用できる普遍的な身体理解を学びます。パフォーマー以外の一般クライアントにも応用できます。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">02</div>
+      <h3>パフォーマーが考案した、<br>全てのパフォーマーのための</h3>
+      <p>このプログラムはパフォーマー自身が現場で感じた課題から生まれました。「もっとこう動けたら」「この詰まりをどうにかしたい」——その声を体系化した、パフォーマーのためのメソッドです。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">03</div>
+      <h3>整体 × 運動で60分レッスンが組める</h3>
+      <p>整体で身体を整え、そのまま正しい運動学習へつなぐ。この流れで構成された60分のオリジナルレッスンをすぐに現場で開催できるようになります。</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-num">04</div>
+      <h3>仕事の幅が広がる</h3>
+      <p>この先、パフォーマーだけでやっていくのは不安——そんな方へ。運動指導や身体ケアのスキルを身につけ、フィットネス・パーソナル・オンラインなど、新たな活動の柱を作りませんか？</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── CURRICULUM ── -->
+<div class="curriculum-wrap">
+  <div class="curriculum-inner">
+    <p class="section-label">Curriculum Structure</p>
+    <h2 class="section-title">学習構造 — <span>合計16時間</span></h2>
+    <div class="divider"></div>
+    <div class="curriculum-grid">
+      <div class="curr-block">
+        <div class="curr-letter">A</div>
+        <div class="curr-hours">2h</div>
+        <h3>身体の基本を知る<br>（解剖学・生理学・評価）</h3>
+        <ul>
+          <li>機能解剖学</li>
+          <li>生理学</li>
+          <li>評価（アセスメント）</li>
+        </ul>
+      </div>
+      <div class="curr-block">
+        <div class="curr-letter">B</div>
+        <div class="curr-hours">12h</div>
+        <h3>実技</h3>
+        <ul>
+          <li>整体的アプローチ</li>
+          <li>機能改善種目の実践</li>
+          <li>身体操作の習得</li>
+          <li>各部位別ワーク</li>
+        </ul>
+      </div>
+      <div class="curr-block" style="border-right:none; grid-column: span 2;">
+        <div class="curr-letter">C</div>
+        <div class="curr-hours">2h</div>
+        <h3>プログラム実践</h3>
+        <ul>
+          <li>ケーススタディ</li>
+          <li>プログラミング設計</li>
+          <li>模擬指導</li>
+          <li>フィードバック</li>
+        </ul>
+      </div>
+    </div>
+    <div class="curr-total">
+      <span>Total Learning Hours</span>
+      <strong>16 hours</strong>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRACTICAL CONTENT ── -->
+<section>
+  <p class="section-label">Practical Content</p>
+  <h2 class="section-title">実技カリキュラム</h2>
+  <div class="divider"></div>
+  <div class="practical-parts">
+
+    <div class="part-row">
+      <div class="part-header">
+        <div>
+          <div class="part-num">Part 1</div>
+          <div class="part-name">実技の全体像<br>— 整体 × 運動学習の流れ</div>
+        </div>
+        <div class="part-goal">このプログラム全体を貫く「整えてから動く」というアプローチを体験・理解するパートです</div>
+      </div>
+      <div class="part-body">
+        <div class="part-sections">
+          <div>
+            <div class="part-section-title">▶ 整体アプローチとは</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">整体アプローチでは、固まった筋肉や関節の詰まりを解消し、身体が本来動けるはずの状態に整えます。「動かしにくい」をほぐしてから運動学習に入ることで、同じエクササイズでもまったく違う感覚が生まれます。</p>
+          </div>
+          <div>
+            <div class="part-section-title">▶ 運動学習とは</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">整体で動ける状態になった身体に、正しい筋肉の使い方・関節の動かし方を学習させます。「ほぐす」だけでは戻ってしまう身体を、運動学習で定着させるのがこのプログラムの核心です。</p>
+          </div>
+          <div>
+            <div class="part-section-title">▶ 体幹の安定 ＆ 引き上げる力の習得</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">まず身体の中心（体幹）を安定させながら手足を自由に動かす感覚を養い、腹筋群を伸ばしながら使う引き上げの感覚、美しい背面のラインをつくる動作パターンを段階的に身につけていきます。</p>
+          </div>
+        </div>
+        <p class="part-note">「整えてから動く」この流れを体験することで、Part 2以降の全てのワークの意味が深く理解できるようになります。</p>
+      </div>
+    </div>
+
+    <div class="part-row">
+      <div class="part-header">
+        <div>
+          <div class="part-num">Part 2</div>
+          <div class="part-name">下半身の土台<br>股関節を自由にコントロールする</div>
+        </div>
+        <div class="part-goal">「アラベスクで脚が上がらない」「ジャンプの着地で股関節が詰まる」「前後開脚がつらい」を根本から改善するパートです</div>
+      </div>
+      <div class="part-body">
+        <div class="part-sections">
+          <div>
+            <div class="part-section-title">▶ 整体アプローチ</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">股関節まわりの筋肉の詰まりを丁寧に解放し、脚が動ける状態に整えます。「なんとなく上がりにくい」「前に出しづらい」——その感覚の原因を手でとらえ、整えた直後の「軽さ」を体感させます。</p>
+          </div>
+          <div>
+            <div class="part-section-title">▶ 運動学習</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">脚を上げるときに本当に使うべき筋肉のスイッチを入れる方法を習得。アラベスクやデベロッペの質が変わり、お尻が正しく使えるようになると腰への余分な負担も減ります。足首まわりの安定性と、ジャンプに必要な「床を押し返すバネ」もあわせて習得します。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-row">
+      <div class="part-header">
+        <div>
+          <div class="part-num">Part 3</div>
+          <div class="part-name">上半身の自由<br>表現力と美しい姿勢</div>
+        </div>
+        <div class="part-goal">「腕のラインが美しく出ない」「背中が大きく使えない」「ポールドブラが窮屈に感じる」に応えるパートです</div>
+      </div>
+      <div class="part-body">
+        <div class="part-sections">
+          <div>
+            <div class="part-section-title">▶ 整体アプローチ</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">背中・肩まわり・胸郭のこわばりをほぐし、上半身が「大きく・自由に」動ける状態に整えます。「肩の詰まり」が取れた瞬間、腕の動きが驚くほど変わります。</p>
+          </div>
+          <div>
+            <div class="part-section-title">▶ 運動学習</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">胸を開く動き・肩甲骨のコントロール・美しいバックラインをつくる背面の筋群の使い方を習得。ポールドブラや腕のライン、後屈の質が変わり、パフォーマンスの見え方が大きく変わります。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-row">
+      <div class="part-header">
+        <div>
+          <div class="part-num">Part 4</div>
+          <div class="part-name">軸を作る<br>ターンと動的バランス</div>
+        </div>
+        <div class="part-goal">「ピルエットが2回転で止まる」「片脚でぐらつく」「本番になると軸が崩れる」に応えるパートです</div>
+      </div>
+      <div class="part-body">
+        <div class="part-sections">
+          <div>
+            <div class="part-section-title">▶ 運動学習</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">Part 1〜3で整えた全身の土台を「動きの中で使う」パートです。片脚で崩れない軸、体の内側で支える感覚、遠心力を味方にしてターン回数を伸ばす仕組みを習得。「ターンが苦手」が変わる体験をします。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part-row">
+      <div class="part-header">
+        <div>
+          <div class="part-num">Part 5</div>
+          <div class="part-name">長く踊り続けるために<br>トラブル予防と対策</div>
+        </div>
+        <div class="part-goal">「腰が重だるい」「膝をまた痛めた」「ジャンプの着地のたびに怖い」に応えるパートです</div>
+      </div>
+      <div class="part-body">
+        <div class="part-sections">
+          <div>
+            <div class="part-section-title">▶ 整体アプローチ</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">パフォーマーに多い腰まわりや臀部の張りを丁寧に解消します。「痛みが出る前に整える」という予防的な視点が、指導の質と信頼を高めます。</p>
+          </div>
+          <div>
+            <div class="part-section-title">▶ 運動学習</div>
+            <p style="font-size:13px;color:var(--text-light);line-height:1.9;">腰・膝への負担を減らす動作パターンを習得します。ジャンプの着地、ターンのプレパレーション——一つひとつの動きを安全に行える身体をつくります。</p>
+          </div>
+        </div>
+        <p class="part-note">各パートは独立したユニットとして実施できますが、Part 1から順に積み上げることで「体幹の安定→脚の機能→動的バランス」という論理的な流れが完成します。</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── GOALS ── -->
+<div class="goals-section">
+  <div class="goals-inner">
+    <p class="section-label">Learning Outcomes</p>
+    <h2 class="section-title">Level 1 で<span style="color:var(--gold-pale)">目指す姿</span></h2>
+    <div class="divider" style="background:rgba(255,255,255,0.3)"></div>
+    <div class="goals-grid">
+      <div class="goal-card">
+        <h3>身体構造の理解と自己実践</h3>
+        <p>基本的な体の構造を理解し、自らが正しい動作を実行できるようになります。指導者自身が身体で感じながら学ぶことが出発点です。</p>
+      </div>
+      <div class="goal-card">
+        <h3>60分レッスンが組めるようになる</h3>
+        <p>整体アプローチと運動学習を組み合わせた60分の完結型レッスンを、受講後すぐに現場で開催できるようになります。パフォーマー向け・一般向け、どちらにも展開可能です。</p>
+      </div>
+      <div class="goal-card">
+        <h3>「整える」と「運動」の統合指導</h3>
+        <p>整体的アプローチと運動指導を接続して指導できるようになります。これが他の資格との最大の差別化ポイントであり、本質的にパフォーマンスを上げる武器になります。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── PRICE ── -->
+<div style="background:var(--charcoal); padding:60px 40px; text-align:center;">
+  <div style="max-width:600px; margin:0 auto;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:0.45em; text-transform:uppercase; color:var(--gold-light); margin-bottom:20px;">Tuition</p>
+    <div style="font-family:'Cormorant Garamond',serif; font-size:clamp(48px,7vw,72px); font-weight:300; color:var(--cream); line-height:1;">¥198,000</div>
+    <div style="font-size:12px; color:rgba(245,240,232,0.45); margin-top:12px; letter-spacing:0.2em;">税込 / 一括払い</div>
+  </div>
+</div>
+
+<!-- ── CERTIFICATION ── -->
+<section>
+  <p class="section-label">Certification</p>
+  <h2 class="section-title">修了・認定<span>要件</span></h2>
+  <div class="divider"></div>
+  <div class="cert-row">
+    <div class="cert-box">
+      <h3>Examination</h3>
+      <ul>
+        <li>筆記試験（解剖生理学・評価・プログラミング理解）</li>
+        <li>実技評価（模擬指導による実践力の確認）</li>
+      </ul>
+    </div>
+    <div class="cert-box">
+      <h3>Renewal — 2年ごと</h3>
+      <ul>
+        <li>公式アップデート講座の受講（必須）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── CAREER PATHS ── -->
+<div class="career-wrap">
+  <div class="career-inner">
+    <p class="section-label">Career Paths</p>
+    <h2 class="section-title">取得後の<span>活動フィールド</span></h2>
+    <div class="divider"></div>
+    <div class="career-grid">
+      <div class="career-card">
+        <div class="career-icon">🎭</div>
+        <h3>パフォーマー指導</h3>
+        <p>自身のスキル向上に加え、ダンス・一輪車など他競技への応用指導が可能になります。自身のクラスを持つなど、サービスの展開もできます。</p>
+      </div>
+      <div class="career-card">
+        <div class="career-icon">🏋️</div>
+        <h3>一般フィットネス現場（斡旋あり）</h3>
+        <p>セミナーで培った高度な知見を一般のジム等での指導に活用できます。希望者には能力に応じ、現場の斡旋も行います。</p>
+      </div>
+      <div class="career-card">
+        <div class="career-icon">🏢</div>
+        <h3>組織・法人連携</h3>
+        <p>企業や地域の健康経営サポートなど、法人向けサービスの展開が可能です。専門資格が信頼の裏付けになります。</p>
+      </div>
+      <div class="career-card">
+        <div class="career-icon">🚀</div>
+        <h3>独立支援</h3>
+        <p>独立・活動拡張を協会が積極的にサポートします。PBI資格を軸に、自分らしい指導スタイルを築いていけます。</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ROADMAP FLOW ── -->
+<section>
+  <p class="section-label">Program Flow</p>
+  <h2 class="section-title">受講から認定まで<span>の流れ</span></h2>
+  <div class="divider"></div>
+  <div class="flow-steps">
+    <div class="flow-step">
+      <div class="flow-step-num">01</div>
+      <h3>説明会 / 個別相談</h3>
+      <p>プログラムの内容・受講形式・費用について詳しくご説明します。</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">02</div>
+      <h3>受講申込み</h3>
+      <p>お申し込み後、受講開始のご案内をお送りします。</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">03</div>
+      <h3>講座受講</h3>
+      <p>A〜Cの3モジュール＋実技5パートを、実践的に学んでいきます。</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">04</div>
+      <h3>自主学習</h3>
+      <p>受講内容を復習し、試験に向けて知識と技術を定着させます。</p>
+    </div>
+    <div class="flow-step">
+      <div class="flow-step-num">05</div>
+      <h3>試験・認定</h3>
+      <p>筆記試験と実技評価を経て、PBI Level 1 認定資格を取得します。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── ORGANIZER ── -->
+<div style="background:var(--cream); padding:80px 40px;">
+  <div style="max-width:1000px; margin:0 auto;">
+    <p class="section-label">Organizer & Instructor</p>
+    <h2 class="section-title">主催団体・<span>講師</span></h2>
+    <div class="divider"></div>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:2px; background:var(--border);">
+      <div style="background:var(--warm-white); padding:40px 36px;">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Organizing Body</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--charcoal); margin-bottom:10px; line-height:1.6;">一般社団法人<br>日本ダンサー整体セラピスト®協会</h3>
+        <p style="font-size:13px; color:var(--text-light); line-height:1.9;">ダンサーの身体に特化した整体技術と知識を広め、すべてのダンサーが安心して身体のケアや調整を受けられる環境を提供することを目的とする団体です。ダンサーが心からダンスを楽しみながらパフォーマンスを最大限に発揮できる身体づくりをサポートし、ダンス業界全体の活性化に貢献することを目指しています。</p>
+        <p style="margin-top:14px;"><a href="https://dance-seitai.net/" style="font-size:12px; color:var(--gold); letter-spacing:0.05em; text-decoration:none; border-bottom:1px solid var(--gold-pale);">dance-seitai.net →</a></p>
+      </div>
+      <div style="background:var(--warm-white); padding:40px 36px;">
+        <p style="font-family:'Cormorant Garamond',serif; font-size:11px; letter-spacing:0.4em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;">Operating Company / Instructor</p>
+        <h3 style="font-family:'Noto Serif JP',serif; font-size:16px; font-weight:600; color:var(--charcoal); margin-bottom:10px; line-height:1.6;">株式会社Willness<br><span style="font-size:13px; font-weight:400; color:var(--brown-light);">代表 古田祐実</span></h3>
+        <p style="font-size:13px; color:var(--text-light); line-height:1.9;">「からだ作りのプロ」として、健康・スポーツ・美容の分野で一人ひとりのウェルネスを推進する会社です。パーソナル・グループレッスンをはじめ、自治体・法人・学校への講演やコンサルティング、インストラクター育成など幅広く展開。代表の古田はホリプロ公認トレーナーとして、モデル・タレント・ダンサーなどへの指導実績も持ちます。</p>
+        <p style="margin-top:14px;"><a href="https://willness-home.com/" style="font-size:12px; color:var(--gold); letter-spacing:0.05em; text-decoration:none; border-bottom:1px solid var(--gold-pale);">willness-home.com →</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA ── -->
+<div class="cta-block">
+  <p class="cta-eyebrow">PBI Level 1 — Foundation</p>
+  <h2>一生踊れる身体を、<br><em>指導できる人になる。</em></h2>
+  <p class="cta-sub">説明会・個別相談 受付中</p>
+  <div class="cta-buttons">
+    <a href="#" class="btn-primary">説明会に申し込む</a>
+    <a href="#" class="btn-secondary">詳細資料を請求する</a>
+  </div>
+</div>
+
+</body>
+</html>
